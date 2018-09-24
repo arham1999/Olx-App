@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log In</title>
+    <link rel="shorcut icon" href="images/olxlogo.jpg">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-bar">
+            <div class="header-bar-right">
+                <ul>
+                    <li class="dropdown">
+                        <span class="span-text" id="write-name"> </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html">
+                                <img class="img-responsive" src="images/olxtitle.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                <li id="ad">
+                                    <a href="myads.html">Manage Ads</a>
+                                </li>
+                                <li id="sel">
+                                    <a href="mysellchat.html">Seller Chat Room</a>
+                                </li>
+                                <li id="buy">
+                                    <a href="mychat.html">Buyer Chat Room</a>
+                                </li>
+                                <li id="fav">
+                                    <a href="adview.html">Favourite Ads</a>
+                                </li>
+                                <li id="button-login">
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/header-middle-->
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container mob-view">
+                <!--set its display to inline in mobile view-->
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="pull-left">
+                            <form class="form-inline text-center" onsubmit="return search();">
+                                <select class="form-control" id="drop">
+                                    <option>All</option>
+                                    <option>Properties</option>
+                                    <option>Cars</option>
+                                    <option>Electronics & Appliances</option>
+                                    <option>Furniture</option>
+                                    <option>Jobs</option>
+                                    <option>Mobiles</option>
+                                    <option>Bikes</option>
+                                    <option>Books, Sports & Hobbies</option>
+                                    <option>Fashion</option>
+                                    <option>Pets</option>
+                                </select>
+                                <input id="sear" type="text" class="form-control" style="width: 200px;">
+                                <br>
+                                <br>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="pull-right">
+                            <a style="text-decoration: none;color: white" href="submitad.html">
+                                <button class="btn btn-success bt-width">Submit An Ad</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <div class="container">
+            <div class="text-center">
+                <h1>Sign In</h1>
+            </div>
+            <form id="form2" onsubmit="return logIn();" method="POST">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
+                <div class="text-center">
+                    <input type="submit" id="submit" value="Submit" class="btn btn-primary">
+                    <hr>
+                    <a href="signup.html">Don't Have An Account?</a>
+                </div>
+                <div class="text-center">
+                    <h1>OR</h1>
+                </div>
+            </form>
+            <br>
+            <div class="text-center">
+                <button class="btn btn-success" onclick="googlesign()"> Sign In With Google </button>
+            </div>
+        </div>
+    </main>
+    <br>
+    <footer>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="footer-logo">
+                    <h1>
+                        <a href="index.html">
+                            <img src="images/olxtitle.png">
+                        </a>
+                    </h1>
+                </div>
+                <div class="footer-social-icons">
+                    <ul>
+                        <li>
+                            <a class="facebook" href="#">
+                                <img src="images/fbicon.png">
+                                <span>Facebook</span>
+                            </a>
+                        </li>&emsp;
+                        <li>
+                            <a class="twitter" href="#">
+                                <img src="images/twittericon.png">
+                                <span>Twitter</span>
+                            </a>
+                        </li>&emsp;
+                        <li>
+                            <a class="flickr" href="#">
+                                <img src="images/instaicon.png">
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyrights">
+                    <p> © 2018 All Rights Reserved |
+                        <a href="#"> Olx Pakistan</a>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/sign.js"></script>
+    <script src="js/signout.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>

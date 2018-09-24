@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Ads</title>
+    <link rel="shorcut icon" href="images/olxlogo.jpg">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Full-width input fields */
+
+        .modal input[type=text] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+        }
+
+        /* Add a background color when the inputs get focus */
+
+        .modal input[type=text]:focus {
+            outline: none;
+        }
+
+        /* Set a style for all buttons */
+
+        button.abc {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        button.abc:hover {
+            opacity: 1;
+        }
+
+        /* Extra styles for the cancel button */
+
+        .cancelbtn {
+            padding: 14px 20px;
+            background-color: #f44336;
+        }
+
+        /* Float cancel and signup buttons and add an equal width */
+
+        .cancelbtn,
+        .signupbtn {
+            float: left;
+            width: 50%;
+        }
+
+        /* Add padding to container elements */
+
+        .containera {
+            padding: 16px;
+        }
+
+        /* The Modal (background) */
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: #474e5d;
+            padding-top: 50px;
+        }
+
+        /* Modal Content/Box */
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* Style the horizontal ruler */
+
+        hr.div {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* The Close Button (x) */
+
+        .close {
+            position: absolute;
+            right: 35px;
+            top: 15px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f1f1f1;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f44336;
+            cursor: pointer;
+        }
+
+        /* Clear floats */
+
+        .clearfixa::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Change styles for cancel button and signup button on extra small screens */
+
+        @media screen and (max-width: 300px) {
+            .cancelbtn,
+            .signupbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-bar">
+            <div class="header-bar-right">
+                <ul>
+                    <li class="dropdown">
+                        <span class="span-text" id="write-name"> </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html">
+                                <img class="img-responsive" src="images/olxtitle.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                <li id="ad">
+                                    <a href="myads.html">Manage Ads</a>
+                                </li>
+                                <li id="sel">
+                                    <a href="mysellchat.html">Seller Chat Room</a>
+                                </li>
+                                <li id="buy">
+                                    <a href="mychat.html">Buyer Chat Room</a>
+                                </li>
+                                <li id="fav">
+                                    <a href="adview.html">Favourite Ads</a>
+                                </li>
+                                <li id="button-login">
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/header-middle-->
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container mob-view">
+                <!--set its display to inline in mobile view-->
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="pull-left">
+                            <form class="form-inline text-center" onsubmit="return search();">
+                                <select class="form-control" id="drop">
+                                    <option>All</option>
+                                    <option>Properties</option>
+                                    <option>Cars</option>
+                                    <option>Electronics & Appliances</option>
+                                    <option>Furniture</option>
+                                    <option>Jobs</option>
+                                    <option>Mobiles</option>
+                                    <option>Bikes</option>
+                                    <option>Books, Sports & Hobbies</option>
+                                    <option>Fashion</option>
+                                    <option>Pets</option>
+                                </select>
+                                <input id="sear" type="text" class="form-control" style="width: 200px;">
+                                <br>
+                                <br>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="pull-right">
+                            <a style="text-decoration: none;color: white" href="submitad.html">
+                                <button class="btn btn-success bt-width">Submit An Ad</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <div class="text-center">
+            <h1>My Ads</h1>
+        </div>
+        <hr>
+        <div class="cate-cont">
+            <ul id="myads">
+
+
+            </ul>
+
+        </div>
+
+        <!--this will be pop up-->
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form id="mod" class="modal-content" method="POST" onsubmit="return updateIt()">
+                <div class="containera">
+                    <h1>Edit Ad</h1>
+                    <p>Fill the information to edit your ad</p>
+                    <hr class="div">
+                    <label for="adname">
+                        <b>Ad Name:</b>
+                    </label>
+                    <input class="form-control" id="adname" type="text" name="adname" required>
+
+                    <label for="category">Select Category:</label>
+                    <select class="form-control" id="category">
+                        <option>Properties</option>
+                        <option>Cars</option>
+                        <option>Electronics & Appliances</option>
+                        <option>Furniture</option>
+                        <option>Jobs</option>
+                        <option>Mobiles</option>
+                        <option>Bikes</option>
+                        <option>Books, Sports & Hobbies</option>
+                        <option>Fashion</option>
+                        <option>Pets</option>
+                    </select>
+                    <br>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" class="form-control" style="resize: none" required> </textarea>
+                    <br>
+                    <label for="price">Price:</label>
+                    <input type="number" name="price" id="price" class="form-control" required>
+                    <br>
+                    <label for="model">Model:</label>
+                    <input type="text" name="model" id="model" class="form-control" required>
+
+                    <label for="urname">Your Name:</label>
+                    <input type="text" name="urname" id="urname" class="form-control" required>
+                    <label for="number">Number:</label>
+                    <input type="number" name="number" id="number" class="form-control" required>
+                    <br>
+                    <label>Upload Pictures:</label>
+                    <input type="file" id="file" accept='image/*' required>
+                    <br>
+                    <center id="center"><div class="loader"></div></center>
+                    <div class="clearfixa">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="abc cancelbtn">Cancel</button>
+                        <button type="submit" class="abc signupbtn">Post Ad</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--end here-->
+
+
+
+
+    </main>
+    <br>
+    <footer>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="footer-logo">
+                    <h1>
+                        <a href="index.html">
+                            <img src="images/olxtitle.png">
+                        </a>
+                    </h1>
+                </div>
+                <div class="footer-social-icons">
+                    <ul>
+                        <li>
+                            <a class="facebook" href="#">
+                                <img src="images/fbicon.png">
+                                <span>Facebook</span>
+                            </a>
+                        </li>&emsp;
+                        <li>
+                            <a class="twitter" href="#">
+                                <img src="images/twittericon.png">
+                                <span>Twitter</span>
+                            </a>
+                        </li>&emsp;
+                        <li>
+                            <a class="flickr" href="#">
+                                <img src="images/instaicon.png">
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyrights">
+                    <p> © 2018 All Rights Reserved |
+                        <a href="#"> Olx Pakistan</a>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/myads.js"></script>
+    <script src="js/categoryadd.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/signout.js"></script>
+</body>
+
+</html>
